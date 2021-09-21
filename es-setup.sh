@@ -50,7 +50,8 @@ function setup_java() {
 }
 
 function remove_installed_version() {
-  sudo service elasticsearch stop
+  #sudo service elasticsearch stop
+  sem-service stop elasticsearch
   sudo apt-get purge -f -y elasticsearch
   sudo rm -rf /var/lib/elasticsearch
 }
@@ -62,7 +63,8 @@ function install_new_version() {
   echo 'Y' | sudo dpkg -i $SEMAPHORE_CACHE_DIR/$DEB
 
   #sudo service elasticsearch start
-  sudo /etc/init.d/elasticsearch restart
+  #sudo /etc/init.d/elasticsearch restart
+  sem-service start elasticsearch
 
   echo ">> Installation completed"
 }
