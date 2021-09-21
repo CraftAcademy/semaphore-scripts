@@ -30,7 +30,6 @@ then
 fi
 URL="https://artifacts.elastic.co/downloads/elasticsearch/$DEB"
 
-
 function stall_for_elasticsearch() {
   echo ">> Waiting for ElasticSearch to become available"
 
