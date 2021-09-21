@@ -9,11 +9,11 @@ set -e
 # Usage:
 # Add the line below to your setup command in Project Settings
 #
-# wget https://raw.githubusercontent.com/renderedtext/semaphore-scripts/master/es-setup.sh  && bash es-setup.sh <es-version>
+# wget https://raw.githubusercontent.com/craftacademy/semaphore-scripts/master/es-setup.sh  && bash es-setup.sh <es-version>
 #
-# For example, the following command will install ES version 6.0 and cache its installation on Semaphore:
+# For example, the following command will install ES version 7.10.1 and cache its installation on Semaphore:
 #
-# wget https://raw.githubusercontent.com/renderedtext/semaphore-scripts/master/es-setup.sh  && bash es-setup.sh 6.0.0
+# wget https://raw.githubusercontent.com/craftacademy/semaphore-scripts/master/es-setup.sh  && bash es-setup.sh 7.10.2
 #
 # Note: Script does not properly detect if the ES version 2.x is started so it will hang on this step.
 ####
