@@ -45,15 +45,17 @@ function stall_for_elasticsearch() {
 }
 
 function setup_java() {
+  echo ">> Installing Java"
   source /opt/change-java-version.sh
   change-java-version 8
 }
 
 function remove_installed_version() {
+  echo ">> Sopping current ElasticSearch service"
   #sudo service elasticsearch stop
   sem-service stop elasticsearch
-  sudo apt-get purge -f -y elasticsearch
-  sudo rm -rf /var/lib/elasticsearch
+  #sudo apt-get purge -f -y elasticsearch
+  #sudo rm -rf /var/lib/elasticsearch
 }
 
 function install_new_version() {
@@ -63,8 +65,8 @@ function install_new_version() {
   echo 'Y' | sudo dpkg -i $SEMAPHORE_CACHE_DIR/$DEB
 
   #sudo service elasticsearch start
-  #sudo /etc/init.d/elasticsearch restart
-  sem-service start elasticsearch
+  sudo /etc/init.d/elasticsearch restart
+  #sem-service start elasticsearch
 
   echo ">> Installation completed"
 }
